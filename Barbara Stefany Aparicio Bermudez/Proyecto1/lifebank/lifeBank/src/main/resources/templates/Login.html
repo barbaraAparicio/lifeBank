@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<h1>hola</h1>
+</body>
+</html>
+
+
+public String EncryptJWT(LoginPojoRequest loginRequest, String iNetAddress) {
+		String sch = null;
+		Map<String, Object> mapJWT = new HashMap<String, Object>();
+		 
+		LocalDateTime now = LocalDateTime.now();
+		now = now.plusMinutes(30);
+		
+		mapJWT.put("idUser", loginRequest.getUser());
+		mapJWT.put("ipAddress", iNetAddress);
+		mapJWT.put("expiration-datetime", now);
+		
+		
+		JWT jwt = new JWT(mapJWT,
+				"P8IJ9OgAwnB/SR/QYxQWDF5Vod3elP3MEHEbq2fcukc=",
+				"token-lifebank",
+				"LifeMiles",
+				Long.parseLong("1800000")
+				);
+		sch = jwt.generate();
+		
+		return sch;
+	}

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: lifeBank
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: baraparicio
+Implementation-Vendor-Id: com.lifeBank
+Build-Jdk: 1.8.0_111
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/lifeBank
+Created-By: Maven Integration for Eclipse
+
